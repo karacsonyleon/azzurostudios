@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azzuro Studios</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Orbitron', sans-serif;
+            background: url('webackground 4k.jpg');
+            background-size: cover;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            position: sticky;
+            top: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        header a:hover {
+            border-color: transparent;
+            background: linear-gradient(135deg, #6c63ff, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #00d4ff, #6c63ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-top: 20px;
+            max-width: 600px;
+        }
+
+        .cta {
+            margin-top: 40px;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #6c63ff, #00d4ff);
+            border: none;
+            border-radius: 25px;
+            font-size: 1.2em;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 20px rgba(108, 99, 255, 0.4);
+        }
+
+        .portfolio {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+            padding: 30px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            height: 150px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, #6c63ff, #00d4ff);
+        }
+
+        .portfolio-item:hover:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 1;
+        }
+
+        .contact {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contact input,
+        .contact textarea,
+        .contact select {
+            margin-bottom: 15px;
+            padding: 15px;
+            font-size: 1em;
+            border: 2px solid transparent;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .contact input:focus,
+        .contact textarea:focus,
+        .contact select:focus {
+            outline: none;
+            border-color: #6c63ff;
+        }
+
+        .contact select {
+            color: white;
+            background: rgba(255, 255, 255, 0.2);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .contact select:hover {
+            box-shadow: 0 0 15px rgba(108, 99, 255, 0.5);
+        }
+
+        .contact textarea {
+            resize: none;
+        }
+
+        .contact button {
+            padding: 15px;
+            border: none;
+            border-radius: 25px;
+            background: linear-gradient(135deg, #6c63ff, #00d4ff);
+            color: white;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Animation for Budget Dropdown */
+        select[name="budget"] {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%204%205%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M2%200l2%202H0z%22/%3E%3C/svg%3E');
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 10px;
+            transition: border-color 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#">Azzuro Studios</a>
+        <nav>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Azzuro Studios</h1>
+        <p>Welcome to a world of futuristic design and creativity. Explore my portfolio and let's create something extraordinary together.</p>
+        <button class="cta">View Portfolio</button>
+    </div>
+
+    <section id="portfolio" class="portfolio">
+        <div class="portfolio-item"></div>
+        <div class="portfolio-item"></div>
+        <div class="portfolio-item"></div>
+        <div class="portfolio-item"></div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <form action="https://formsubmit.co/karacsony.leom@gmail.com" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <select name="budget" required>
+                <option value="">Select Your Budget</option>
+                <option value="50-100">$50-$100</option>
+                <option value="100-250">$100-$250</option>
+                <option value="250+">$250+</option>
+            </select>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 Azzuro Studios. All rights reserved.</p>
+    </footer>
+</body>
+</html>
